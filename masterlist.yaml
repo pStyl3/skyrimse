@@ -11591,6 +11591,7 @@ plugins:
     after:
       - 'Complete Crafting Overhaul_Remastered.esp'
       - 'iNeed.esp'
+      - 'iNeed - Dangerous Diseases.esp'
     req:
       - *SKSE
       - *SKSEVR
@@ -11609,9 +11610,6 @@ plugins:
     msg:
       - *requiresMCM
       - *requiresMCMVR
-      - <<: *compatIssuesWithX
-        subs: [ 'iNeed - Food, Water and Sleep **iNeed.esp** & **iNeed - Extended.esp**' ]
-        condition: 'active("iNeed.esp") or active("iNeed - Extended.esp")'
       - <<: *compatNotes
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19924/?tab=forum&topic_id=6988461' ]
       - <<: *compatPatch
@@ -11745,25 +11743,51 @@ plugins:
       - crc: 0x7117CBA9
         util: 'SSEEdit v4.0.3'
 
+  - name: 'iNeed( - Extended)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/645/'
+        name: 'iNeed - Food Water and Sleep'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19390/'
+        name: 'iNeed - Food Water and Sleep - Continued'
   - name: 'iNeed.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/645/' ]
+    msg:
+      - <<: *useInstead
+        subs: [ '[iNeed - Food Water and Sleep - Continued](https://www.nexusmods.com/skyrimspecialedition/mods/19390/)' ]
+        condition: 'version("iNeed.esp", "1.90", <=)'
     after: [ 'SkyUI_SE.esp' ]
     clean:
-      # Version: 1.92
-      - crc: 0x9F75FA0D
-        util: 'SSEEdit v4.0.3'
+      - crc: 0x0AF4C3BD
+        util: 'SSEEdit v4.1.5p'
   - name: 'iNeed - Extended.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/645/' ]
     after:
       - 'AnotherSortingMod_2017-SSE.esp'
       - 'Weapons Armor Clothing & Clutter Fixes.esp'
+    dirty:
+      # Full
+      - <<: *quickClean
+        crc: 0x1D72F65E
+        util: '[SSEEdit v4.1.5p](https://www.nexusmods.com/skyrimspecialedition/mods/164/)'
+        itm: 2
+      # No Food Changes
+      - <<: *quickClean
+        crc: 0x396A99DC
+        util: '[SSEEdit v4.1.5p](https://www.nexusmods.com/skyrimspecialedition/mods/164/)'
+        itm: 1
     clean:
-      # Version: 1.92
-      - crc: 0xAE4F44D4
-        util: 'SSEEdit v4.0.3'
+      # No Food / Recipe Changes
+      - crc: 0xB726B0E8
+        util: 'SSEEdit v4.1.5p'
   - name: 'iNeed - Dangerous Diseases.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19390/' ]
-    after: [ 'Complete Alchemy & Cooking Overhaul.esp' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19390/'
+        name: 'iNeed - Food Water and Sleep - Continued'
+    msg:
+      - <<: *patchProvided
+        subs: [ 'Complete Alchemy & Cooking Overhaul' ]
+        condition: 'active("Complete Alchemy & Cooking Overhaul.esp") and not active("CACO - iNeed DD Patch.esp")'
+    clean:
+      - crc: 0xB2A1F482
+        util: 'SSEEdit v4.1.5p'
 
   - name: 'MainlandStalhrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/8307/' ]
