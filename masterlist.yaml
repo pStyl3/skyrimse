@@ -2917,28 +2917,19 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12604/'
         name: 'SkyUI'
+      - link: 'https://github.com/doodlum/SkyUI-Community/releases/'
+        name: 'SkyUI SE Community Update (6.0+) (Github)'
       - link: 'https://github.com/Odie/skyui-vr/releases/'
         name: 'SkyUI - VR (Github)'
-    group: *fixesGroup
     req:
       - *SKSE
       - *SKSEVR
       - name: 'SKSE/Plugins/skyrimvrtools.dll'
         display: '[Skyrim VR Tools](https://www.nexusmods.com/skyrimspecialedition/mods/27782/)'
         condition: 'file("../SkyrimVR.exe")'
-    msg:
-      - <<: *essentialFiles
-        subs: [ '**scripts/ski_playerloadgamealias.pex**' ]
-        condition: 'checksum("scripts/ski_playerloadgamealias.pex", 8B234B3B) or (not file("scripts/ski_playerloadgamealias.pex") and ((active("SofiaFollower.esp") and checksum("SofiaFollower.bsa", 2F513E13)) or (active("ConfigureCommentaryRate.esp") and checksum("ConfigureCommentaryRate.bsa", EF4CBA70)) or (active("Thunderchild - Epic Shout Package.esp") and checksum("Thunderchild - Epic Shout Package.bsa", A599B10F))))'
-      - type: say
-        content:
-          - lang: en
-            text: 'BSAs known to include files from an older version of this mod: {0}.'
-        subs: [ '**ConfigureCommentaryRate.bsa**, **SofiaFollower.bsa**, **Thunderchild - Epic Shout Package.bsa**' ]
-        condition: 'not file("scripts/ski_playerloadgamealias.pex") and ((active("SofiaFollower.esp") and checksum("SofiaFollower.bsa", 2F513E13)) or (active("ConfigureCommentaryRate.esp") and checksum("ConfigureCommentaryRate.bsa", EF4CBA70)) or (active("Thunderchild - Epic Shout Package.esp") and checksum("Thunderchild - Epic Shout Package.bsa", A599B10F)))'
     clean:
-      - crc: 0x79ACE179
-        util: 'SSEEdit v4.1.5f'
+      - crc: 0xC2C1B895
+        util: 'SSEEdit v4.1.5p 32bit fix version'
 
 ###### AudioVisual ######
   - name: '___SNOW_FIX.esp'
