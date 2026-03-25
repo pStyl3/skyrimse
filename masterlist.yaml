@@ -10632,7 +10632,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/60888/'
         name: 'Requiem - The Roleplaying Overhaul'
-    group: *perksGroup
+    group: *coreGroup
     inc:
       - 'Adamant.esp'
       - 'Aetherius.esp'
