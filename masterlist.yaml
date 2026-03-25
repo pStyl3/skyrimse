@@ -2922,6 +2922,7 @@ plugins:
         name: 'SkyUI SE Community Update (6.0+) (Github)'
       - link: 'https://github.com/Odie/skyui-vr/releases/'
         name: 'SkyUI - VR (Github)'
+    group: *fixesGroup
     req:
       - *SKSE
       - *SKSEVR
