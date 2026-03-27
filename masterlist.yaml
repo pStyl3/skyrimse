@@ -2735,13 +2735,6 @@ plugins:
       - Outfits.Remove
       - SpellStats
 
-  - name: 'Vanilla Script MicroOptimizations.esl'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/54061/' ]
-    group: *fixesGroup
-    clean:
-      - crc: 0xF2284762
-        util: 'SSEEdit v4.0.3h (Hotfix 1)'
-
   - name: 'WindhelmGateFixes(_ESL)?\.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/25621/' ]
     group: *fixesGroup
@@ -2783,6 +2776,16 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36734/' ]
     group: *fixesGroup
     msg: [ *alreadyInOrFixedByScrambledBugs ]
+
+###### Fixes - Stability & Performance ######
+  - name: 'Vanilla Script MicroOptimizations.esl'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/54061/'
+        name: 'Vanilla Script (micro)Optimizations'
+    group: *scriptOptimizationGroup
+    clean:
+      - crc: 0xB6C2AA7B
+        util: 'SSEEdit v4.1.5p 32bit fix version'
 
 ###### Modding Tools - Resources ######
   - name: 'FactionSpy.esp'
