@@ -782,8 +782,11 @@ groups:
   - name: &ccGroup Creation Club
     after: [ *mainGroup ]
 
-  - name: &fixesGroup Fixes & Resources
+  - name: &unofficialPatchesGroup Unofficial Patches
     after: [ *ccGroup ]
+
+  - name: &fixesGroup Fixes & Resources
+    after: [ *unofficialPatchesGroup ]
 
   - name: &earlyLoadersGroup Early Loaders
     after: [ *fixesGroup ]
@@ -2278,8 +2281,7 @@ plugins:
         name: 'Unofficial Skyrim Special Edition Patch (Mod DB)'
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/65237/'
         name: 'Unofficial Skyrim Special Edition Patch DV'
-    group: *fixesGroup
-    after: [ 'BOS Master Occlusion.esm' ]
+    group: *unofficialPatchesGroup
     msg:
       - <<: *obsolete
         condition: 'readable("../SkyrimSE.exe") and product_version("../SkyrimSE.exe", "1.6.1130.0", >=) and version("unofficial skyrim special edition patch.esp", "4.3.1", <)'
@@ -2356,7 +2358,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/18975/'
         name: 'Unofficial Skyrim Creation Club Content Patches'
-    group: *fixesGroup
+    group: *unofficialPatchesGroup
   - name: 'unofficial skyrim creation club content patch.esl'
     req:
       - 'ccbgssse041-netchleather.esl'
