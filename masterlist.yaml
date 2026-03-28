@@ -2658,17 +2658,6 @@ plugins:
       - crc: 0xBF9B55EB
         util: 'SSEEdit v4.0.3h (Hotfix 1)'
 
-  - name: 'ScriptFixesCompilation.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/105144/' ]
-    group: *fixesGroup
-    after: ['unofficial skyrim special edition patch.esp']
-    req:
-      - *SKSE
-      - *SKSEVR
-    msg:
-      - *requiresMCM
-      - *requiresMCMVR
-
   - name: 'Skyrim Project Optimization - (No Homes - )?Full( ESL)? Version\.esm'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14084/'
@@ -2778,6 +2767,23 @@ plugins:
     msg: [ *alreadyInOrFixedByScrambledBugs ]
 
 ###### Fixes - Stability & Performance ######
+  - name: 'ScriptFixesCompilation.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/105144/'
+        name: 'Script Optimization and Fixes Compilation'
+    group: *scriptOptimizationGroup
+    req:
+      - name: 'SKSE/Plugins/ConsoleUtilSSE.dll'
+        display: '[ConsoleUtilSSE NG](https://www.nexusmods.com/skyrimspecialedition/mods/76649/)'
+      - *PapyrusExtender
+    after:
+      - 'unofficial skyrim special edition patch.esp'
+      - 'Vanilla Scripts Enhanced.esl'
+      - 'Vanilla Script MicroOptimizations.esl'
+    msg:
+      - *requiresMCM
+      - *requiresMCMVR
+
   - name: 'SimplyOptimizedScripts.esl'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/97155/'
@@ -2807,6 +2813,9 @@ plugins:
     after: [ 'Vanilla Script MicroOptimizations.esl' ]
     msg:
       - <<: *alreadyInOrFixedByX
+        subs: [ 'Script Optimization and Fixes Compilation' ]
+        condition: 'file("ScriptFixesCompilation.esp")'
+      - <<: *alreadyInOrFixedByX
         subs: [ 'Ultimate Optimized Scripts Compilation' ]
         condition: 'file("UOSC.esl")'
 
@@ -2816,6 +2825,9 @@ plugins:
         name: 'Vanilla Script (micro)Optimizations'
     group: *scriptOptimizationGroup
     msg:
+      - <<: *alreadyInOrFixedByX
+        subs: [ 'Script Optimization and Fixes Compilation' ]
+        condition: 'file("ScriptFixesCompilation.esp")'
       - <<: *alreadyInOrFixedByX
         subs: [ 'Ultimate Optimized Scripts Compilation' ]
         condition: 'file("UOSC.esl")'
