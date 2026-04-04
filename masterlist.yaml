@@ -426,11 +426,6 @@ common:
   - &patch3rdParty_SRPC_Redux
     <<: *patch3rdParty_SRPC
     condition: 'active("SpellResearch.esp") and not (checksum("SpellResearch.esp", 755423D7) or checksum("SpellResearch.esp", 63661836) or checksum("SpellResearch.esp", 860EFC3D)) and not active("Spell Research - Even More Patches.esp") and not active("SpellResearchSynthesizer.esp")'
-  - &patch3rdParty_STIP
-    <<: *patch3rdParty
-    subs:
-      - 'SkyTEST - Realistic Animals and Predators'
-      - '[SkyTEST Integration Project](https://www.nexusmods.com/skyrimspecialedition/mods/13428/)'
 
   # &patchUnavailable
   - &patchUnavailableRequiem
@@ -8001,9 +7996,6 @@ plugins:
 
   - name: 'Beasts of Tamriel.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/5404/' ]
-    msg:
-      - <<: *patch3rdParty_STIP
-        condition: 'active("SkyTEST-RealisticAnimals&Predators.esp") and not active("Skytest Beasts of Tamriel.esp")'
     tag:
       - Invent.Add
       - Relev
@@ -14785,8 +14777,6 @@ plugins:
         condition: 'active("Relationship Dialogue Overhaul.esp") and not active("(Relationship Dialogue Overhaul - Immersive Horses Patch|RDO - Immersive Horses Patch|Immersive Horses - RDO)\.esp") and not active("nwsFollowerFramework.esp")'
       - <<: *patch3rdParty_RPC
         condition: 'active("Requiem.esp") and not active("Requiem - Immersive Horses.esp")'
-      - <<: *patch3rdParty_STIP
-        condition: 'active("SkyTEST-RealisticAnimals&Predators.esp") and not active("Skytest Immersive Horses.esp")'
     tag:
       - Actors.ACBS
       - Actors.AIData
