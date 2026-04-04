@@ -392,11 +392,6 @@ common:
     condition: 'product_version("../SkyrimVR.exe", "1.4.15.0", ==) and not file("SKSE/Plugins/version-1-4-15-0.csv")'
 
   # &patch3rdParty
-  - &patch3rdParty_ClockA
-    <<: *patch3rdParty
-    subs:
-      - 'Clockwork'
-      - '[Additional Clockwork](https://www.nexusmods.com/skyrimspecialedition/mods/47087/)'
   - &patch3rdParty_JSDCP
     <<: *patch3rdParty
     subs:
@@ -11688,8 +11683,6 @@ plugins:
         subs: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/19924/?tab=forum&topic_id=6988461' ]
       - <<: *compatPatch
         subs: [ '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)' ]
-      - <<: *patch3rdParty_ClockA
-        condition: 'active("Clockwork.esp") and not active("ClockworkSuperiorSorting.esp") and not active("ClockworkSorting_Ing_CACO.esp") and not active("ClockworkSorting_Ing_CCCurios_CACO.esp") and not active("ClockworkSorting_Food_CACO.esp")'
       - *patch3rdParty_SRPC
       - <<: *patchProvided
         subs: [ 'Complete Crafting Overhaul Remastered' ]
