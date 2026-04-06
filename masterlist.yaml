@@ -1983,10 +1983,6 @@ plugins:
   - name: 'msjm01_arquebus.esp'
     group: *verifiedCreationsGroup
 
-  # Bards College Expansion
-  - name: 'kinggathcreations_bard.esm'
-    group: *verifiedCreationsGroup
-
   # Black Glass
   - name: 'black glass.esl'
     group: *verifiedCreationsGroup
@@ -24114,6 +24110,15 @@ plugins:
         util: 'SSEEdit v4.0.4b'
       - crc: 0x72C2348A
         util: 'SSEEdit v4.0.4'
+
+  - name: 'kinggathcreations_bard.esm'
+    url:
+      - link: 'https://creations.bethesda.net/en/skyrim/details/d9436fab-12d5-4bcf-a8a1-c359d6a200ea/Bards_College_Expansion/'
+        name: 'Bards College Expansion (Verified Creation)'
+    group: *newContentGroup
+    clean:
+      - crc: 0xB9F9DC96
+        util: 'SSEEdit v4.1.5p 32bit fix version'
 
   - name: 'kynesgrove.esp'
     url:
