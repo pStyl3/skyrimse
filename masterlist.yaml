@@ -2059,10 +2059,6 @@ plugins:
   - name: 'drjacopo''s 3d yellow shrub.esl'
     group: *verifiedCreationsGroup
 
-  # East Empire Expansion
-  - name: 'kinggathcreations_eastempirecompany.esp'
-    group: *verifiedCreationsGroup
-
   # Echoes of the Vale
   - name: 'echoesofthevale.esp'
     group: *verifiedCreationsGroup
@@ -10280,6 +10276,15 @@ plugins:
         crc: 0x391A735F
         util: '[SSEEdit v4.0.3](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 3
+
+  - name: 'kinggathcreations_eastempirecompany.esp'
+    url:
+      - link: 'https://creations.bethesda.net/en/skyrim/details/464c52a8-bb38-42e7-84d2-41734286769d/East_Empire_Expansion/'
+        name: 'East Empire Expansion (Verified Creation)'
+    group: *newContentGroup
+    clean:
+      - crc: 0x03ABC305
+        util: 'SSEEdit v4.1.5p 32bit fix version'
 
   - name: '(LCO(3D)?_[\w\-]+|RadEx_(Missives|NoticeBoard)|radiantBlocker)\.esp'
     url:
