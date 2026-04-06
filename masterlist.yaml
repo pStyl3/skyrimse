@@ -1939,10 +1939,6 @@ plugins:
   - name: 'fortressofice.esl'
     group: *verifiedCreationsGroup
 
-  # A Tale of Blood and Snow
-  - name: 'dv01vampireclanwar.esm'
-    group: *verifiedCreationsGroup
-
   # Aberrations of the Dwemer
   - name: 'aberrationsofthedwemer.esp'
     group: *verifiedCreationsGroup
@@ -20638,6 +20634,15 @@ plugins:
     clean:
       - crc: 0x62425172
         util: 'SSEEdit v4.0.4'
+
+  - name: 'dv01vampireclanwar.esm'
+    url:
+      - link: 'https://creations.bethesda.net/en/skyrim/details/4e3bf6f3-8632-4f5d-8094-fbb245b3d22a/A_Tale_of_Blood_and_Snow/'
+        name: 'A Tale of Blood and Snow (Verified Creation)'
+    tag: [ Keywords ]
+    clean:
+      - crc: 0xF0312268
+        util: 'SSEEdit v4.1.5p 32bit fix version'
 
   - name: 'MorthalBarrow(_AtlasMapMarkers_Patch| ESOImports Patch|-TDC)?\.esp'
     url:
