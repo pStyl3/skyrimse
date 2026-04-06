@@ -2011,10 +2011,6 @@ plugins:
   - name: 'ftadialoguemenu.esp'
     group: *verifiedCreationsGroup
 
-  # Coven of Crones
-  - name: 'cronemod.esm'
-    group: *verifiedCreationsGroup
-
   # Dark and Light: Paladin Pack
   - name: 'gilddarkandlight.esp'
     group: *verifiedCreationsGroup
@@ -20806,6 +20802,18 @@ plugins:
         crc: 0x7E36F0E5
         util: '[SSEEdit v4.0.1](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 122
+
+  - name: 'cronemod.esm'
+    url:
+      - link: 'https://creations.bethesda.net/en/skyrim/details/ccbe2c79-9749-41b1-97e0-1097e087d593/Coven_of_Crones/'
+        name: 'Coven of Crones (Verified Creation)'
+    tag:
+      - C.ImageSpace
+      - C.Light
+      - C.Music
+    clean:
+      - crc: 0xDE9A4E88
+        util: 'SSEEdit v4.1.5p 32bit fix version'
 
   - name: 'Darkend.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10423/' ]
