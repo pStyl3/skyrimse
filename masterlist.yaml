@@ -8970,6 +8970,23 @@ plugins:
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/17909/' ]
     group: *earlyLoadersGroup
 
+  - name: 'HappyLittleShrubs( - (SLaWF|USSEP) Patch)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/71992/'
+        name: 'Happy Little Shrubs'
+  - name: 'HappyLittleShrubs.esp'
+    req:
+      - <<: *BaseObjSwap
+        condition: 'file("HappyLittleShrubsPine_SWAP.ini")'
+    msg:
+      - <<: *requiresResources
+        subs: [ '[Happy Little Trees](https://www.nexusmods.com/skyrimspecialedition/mods/50961/)' ]
+        condition: 'not file("textures/landscape/trees/Northern Hemispheres/AshBark_Atlas.dds")'
+  - name: 'HappyLittleShrubs - (SLaWF|USSEP) Patch\.esp'
+    req: [ 'HappyLittleShrubs.esp' ]
+  - name: 'HappyLittleShrubs - SLaWF Patch.esp'
+    after: [ 'HappyLittleShrubs - USSEP Patch.esp' ]
+
   - name: 'HappyPBRTrees.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/129150' ]
     after: [ 'HappyLittleTrees.esp' ]
