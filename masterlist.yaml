@@ -14153,6 +14153,74 @@ plugins:
   - name: 'ZCSkyrimTeleportationCollectionV2.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/36899/' ]
 
+  - name: 'YASTM(_MCM|_VR)?\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/56144/'
+        name: 'YASTM - Yet Another Soul Trap Manager'
+  - name: 'YASTM.esp'
+    req: [ *SKSE ]
+    inc:
+      - name: '../SkyrimVR.exe'
+        display: 'Skyrim VR'
+    msg:
+      - <<: *useVersion
+        subs: [ 'Skyrim VR' ]
+        condition: 'file("../SkyrimVR.exe")'
+    clean:
+      - crc: 0x2DEC140A
+        util: 'SSEEdit v4.1.5p 32bit fix version'
+  - name: 'YASTM_MCM.esp'
+    msg: [ *requiresMCM ]
+    clean:
+      - crc: 0x0F193AB4
+        util: 'SSEEdit v4.1.5p 32bit fix version'
+  - name: 'YASTM_VR.esp'
+    req:
+      - name: 'SKSE/Plugins/po3_Tweaks.dll'
+        display: '[powerofthree''s Tweaks VR](https://www.nexusmods.com/skyrimspecialedition/mods/59510/)'
+        condition: 'file("../SkyrimVR.exe")'
+      - name: '../SkyrimVR.exe'
+        display: 'Skyrim VR'
+  - name: 'YASTM_(
+              {0}|CCRareCurios
+              {0}|CCSaintsAndSeducers
+              {0}|GuardDialogueOverhaul
+              {0}|ImmersiveSoundsCompendium
+              {0}|Inigo
+              {0}|LucienAnniversaryEdition
+              {0}|LucienCCRareCurios
+              {0}|LucienCCSaintsAndSeducers
+              {0}|MultiLayerParallaxSoulGems
+              {0}|MultiLayerParallaxSoulGemsISC
+              {0}|PraedysSoulGems
+              {0}|PraedysSoulGemsISC
+              {0}|RUSTICSOULGEMSSorted
+              {0}|RUSTICSOULGEMSSortedISC
+              {0}|RUSTICSOULGEMSUnsorted
+              {0}|RUSTICSOULGEMSUnsortedISC
+              {0}|SkyrimRemasteredSoulGems
+              {0}|SkyrimRemasteredSoulGemsISC
+              {0}|TamrielicCulture
+              {0}|TheHangingGardens
+              {0}|Undeath
+              {0}|Vigilant
+              {0}|)Patch\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/56144/'
+        name: 'YASTM - Yet Another Soul Trap Manager'
+    after: [ 'YASTM_MCM.esp' ]
+  - name: 'YASTM_(
+              {0}|CCRareCurios
+              {0}|CCSaintsAndSeducers
+              {0}|LucienAnniversaryEdition
+              {0}|LucienCCRareCurios
+              {0}|LucienCCSaintsAndSeducers
+              {0}|TheHangingGardens
+              {0}|Undeath
+              {0}|Vigilant
+              {0}|)Patch\.esp'
+    req: [ 'YASTM.esp' ]
+
 ###### Gameplay - Mount & Follower Managers ######
   - name: 'AmazingFollowerTweaks.esp'
     url:
