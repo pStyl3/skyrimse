@@ -27508,6 +27508,20 @@ plugins:
       - 'Hideout_Compact.esp'
       - 'Hideout_HF_Compact.esp'
 
+  - name: 'RiversideLodge.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/9567/'
+        name: 'Riverside Lodge'
+    inc: [ 'RiversideLodgeReduxBE.esp' ]
+    tag:
+      - C.Location
+      - C.MiscFlags
+    dirty:
+      - <<: *quickClean
+        crc: 0x9147F783
+        util: '[SSEEdit v4.1.5p 32bit fix version](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        itm: 17
+
   - name: 'RiverwoodHuntingCabinSE.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1783/' ]
     dirty:
