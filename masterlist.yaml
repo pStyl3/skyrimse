@@ -26565,13 +26565,25 @@ plugins:
     after: [ 'ELFX Shadows.esp' ]
 
   - name: 'Eli_Halla.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/1940/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/1940/'
+        name: 'Halla - A Whiterun Player Home'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/38186/'
+        name: 'Halla Redux'
+    msg:
+      - <<: *requiresResources
+        subs: [ '[Halla - A Whiterun Player Home](https://www.nexusmods.com/skyrimspecialedition/mods/1940/)' ]
+        condition: 'not file("Eli_Halla.bsa") and not file("meshes/elianora/halla/eli_wrhousewind.nif")'
+    tag: [ C.Location ]
     dirty:
-      # version: 2.3
       - <<: *quickClean
         crc: 0xA312951A
-        util: '[SSEEdit v4.0.2f](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        util: '[SSEEdit v4.1.5p 32bit fix version](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 9
+    clean:
+      - crc: 0xE3AD0F18
+        util: 'SSEEdit v4.1.5p 32bit fix version'
+
   - name: 'Eli_RiverwoodShack.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/6238/' ]
     dirty:
