@@ -4683,14 +4683,26 @@ plugins:
       - crc: 0x799931DF
         util: 'SSEEdit v4.0.3'
 
-  - name: '(Ambiance( - Light Colors)?|Darker Interior Ambient Fog)\.esp'
+  - name: 'Ambiance( - Light Colors)?\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/46383/'
         name: 'Ambiance - A Vanilla(plus) Ambient Lighting Overhaul'
   - name: 'Ambiance.esp'
     group: *cellLightingGroup
-  - name: 'Darker Interior Ambient Fog.esp'
-    group: *cellLightingGroup
+    inc:
+      - 'ELE_SSE.esp'
+      - 'EnhancedLightsandFX.esp'
+      - 'Luminosity Lighting Overhaul.esp'
+      - 'RelightingSkyrim_SSE.esp'
+      - 'RLO - Interiors.esp'
+      - 'WSEnhancer.esp'
+    clean:
+      - crc: 0x7810B6D3
+        util: 'SSEEdit v4.1.5p 32bit fix version'
+  - name: 'Ambiance - Light Colors.esp'
+    clean:
+      - crc: 0xBE8349F6
+        util: 'SSEEdit v4.1.5p 32bit fix version'
 
   - name: 'Autumn Skies.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14379/' ]
@@ -4772,6 +4784,23 @@ plugins:
       - name: 'SKSE/Plugins/po3_LightPlacer.dll'
         display: '[Light Placer](https://www.nexusmods.com/skyrimspecialedition/mods/127557/)'
     after: [ 'TL Bulbs ISL.esp' ]
+
+  - name: 'Darker Interior Ambient Fog.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/11197/'
+        name: 'Darker Interior Ambient Fog'
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/46383/'
+        name: 'Ambiance - A Vanilla(plus) Ambient Lighting Overhaul'
+    group: *cellLightingGroup
+    inc:
+      - 'ImprovedFog&Lighting.esp'
+      - 'no interior fog.esp'
+      - 'no interior fog ussep.esp'
+    clean:
+      - crc: 0x13BA90BD
+        util: 'SSEEdit v4.1.5p 32bit fix version'
+      - crc: 0x3A45F944
+        util: 'SSEEdit v4.1.5p 32bit fix version'
 
   - name: 'Dolomite Weathers.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/7895/' ]
