@@ -852,9 +852,13 @@ groups:
     description: 'A group for mods that modify map markers and/or add new ones.'
     after: [ *lvlListsGroup ]
 
+  - name: &winterholdRestoredGroup Winterhold Restored
+    description: 'A group for the Winterhold Restored mod.'
+    after: [ *mapMarkersGroup ]
+
   - name: &playerDialogueGroup Player Character Dialogue
     description: 'A group for mods that modify the player character dialogue.'
-    after: [ *mapMarkersGroup ]
+    after: [ *winterholdRestoredGroup ]
 
   - name: &worldSettingsGroup Worldspace Settings
     description: 'A group for modules that need to be loaded late to preserve worldspace settings.'
@@ -25539,7 +25543,10 @@ plugins:
         nav: 7
 
   - name: 'Winterhold Restored.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/12811/' ]
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12811/'
+        name: 'Winterhold Restored'
+    group: *winterholdRestoredGroup
     inc:
       - 'ExpandedWinterholdRuins.esp'
       - 'Less desolate Winterhold.esp'
@@ -25550,54 +25557,7 @@ plugins:
       - 'Winterholdtruecapitalruinsjkversion.esp'
       - 'WinterholdDestruction.esm'
       - 'Winterhold Fully Restored.esp'
-    after:
-      - '3DNPC.esp'
-      - 'Ambriel.esp'
-      - 'AzurasShield_SE_Eng.esp'
-      - 'bring out your dead.esp'
-      - 'CFTO.esp'
-      - 'Clockwork.esp'
-      - 'CollegeOfWinterholdImmersive.esp'
-      - 'cutting room floor.esp'
-      - 'Hair Replacer.esp'
-      - 'Hair Replacer Assets.esp'
-      - 'HMB TCC.esp'
-      - 'Holds.esp'
-      - 'Holds - Winterhold.esp'
-      - 'Immersive Citizens - AI Overhaul.esp'
-      - 'iNeed - Extended.esp'
-      - 'JKs Skyrim.esp'
-      - 'LootableWoodpiles.esp'
-      - 'MagicalCollegeofWinterhold.esp'
-      - 'Missives.esp'
-      - 'OCW_Obscure''s_CollegeofWinterhold.esp'
-      - 'OutlawsRefuges.esp'
-      - 'Prometheus_No_snow_Under_the_roof.esp'
-      - 'Shiva''s Vanilla Hair Replacer.esp'
-      - 'Shiva''s Vanilla Hair Replacer Female.esp'
-      - 'Shiva''s Vanilla Hair Replacer Male.esp'
-      - 'Skyrim Better Bridges - All In One - Merged.esp'
-      - 'Skyrim Better Roads - Winterhold.esp'
-      - 'Skyrim Better Roads - All In One - Merged.esp'
-      - 'Skyrim Better Roads and Bridges - All In One - Merged.esp'
-      - 'sm_winterholdgate.esp'
-      - 'Soulmancer Soundtrack - NoVindDun.esp'
-      - 'TheScarlett.esp'
-      - 'Thunderchild - Epic Shout Package.esp'
-      - 'TKAA.esp'
-      - 'tpos_complete02_RTCWG.esp'
-      - 'windyridge.esp'
-      - 'WinterholdCollegeHideout.esp'
     msg:
-      - <<: *patchProvided
-        subs: [ 'Ambriel - The Lost Princess' ]
-        condition: 'active("Ambriel.esp") and not active("Winterhold Restored - Ambriel Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Azura''s Shield' ]
-        condition: 'active("AzurasShield_SE_Eng.esp") and not active("Winterhold Restored - Azura''s Shield Patch.esp")'
-      - <<: *patchProvided
-        subs: [ 'Holds - The City Overhaul' ]
-        condition: 'active("Holds.esp") and not active("Winterhold Restored - Holds Patch.esp")'
       - <<: *patchProvided
         subs: [ 'JK''s Skyrim' ]
         condition: 'active("JKs Skyrim.esp") and not active("Winterhold Restored - JKs Skyrim Patch.esp")'
@@ -25609,16 +25569,42 @@ plugins:
       - C.MiscFlags
       - Keywords
     clean:
-      - crc: 0x06109F5B
-        util: 'SSEEdit v4.0.4b'
-  - name: 'Winterhold Restored - Holds Patch.esp'
-    after: [ 'Winterhold Restored - Windyridge Patch.esp' ]
-  - name: 'Winterhold Restored - (Holds|Windyridge) Patch.esp'
+      - crc: 0xBB86D379
+        util: 'SSEEdit v4.1.5p 32bit fix version'
+  - name: 'Winterhold Restored - (
+            {0}|Disabled Carriage
+            {0}|Disabled Nordic Walls
+            {0}|Expanded Faces
+            {0}|Expanded Farmhouses
+            {0}|Expanded Fishery
+            {0}|Expanded Horses
+            {0}|Expanded Lighting
+            {0}|3DNPC
+            {0}|BDS
+            {0}|CFTO
+            {0}|COTN Winterhold
+            {0}|FHC
+            {0}|JKs Skyrim
+            {0}|NSUTR
+            {0}|SOS
+            {0}|SLU
+            {0}|SCAIO
+            {0}|The Scarlett
+            {0}|Windyridge
+            {0}|) Patch\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/12811/'
+        name: 'Winterhold Restored'
+  - name: 'Winterhold Restored - Expanded Lighting Patch.esp'
+    tag: [ C.ImageSpace ]
+  ### WR - Patches for other mods ###
+  - name: 'Winterhold Restored - COTN Winterhold Patch.esp'
     after:
-      - 'Winterhold Restored - NSUTR Patch.esp'
+      - 'Winterhold Restored - Expanded Farmhouses Patch.esp'
       - 'Winterhold Restored - JKs Skyrim Patch.esp'
-      - 'Winterhold Restored - Azura''s Shield Patch.esp'
-      - 'Winterhold Restored - Ambriel Patch.esp'
+      - 'Winterhold Restored - Windyridge Patch.esp'
+  - name: 'Winterhold Restored - Windyridge Patch.esp'
+    after: [ 'Winterhold Restored - JKs Skyrim Patch.esp' ]
 
 ###### Locations - Player Homes ######
   - name: '00MarzRedguardHome.esp'
