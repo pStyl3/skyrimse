@@ -18095,10 +18095,27 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/123407/'
         name: 'Vigilant Paper Map for FWMF by Limon'
+
   - name: 'IcePenguinWorldMap(classic|Paper)?\.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/5804/'
         name: 'A Quality World Map'
+    inc:
+      - 'A Clear Map of Skyrim.esp'
+      - 'EzEWorldMapSE.esp'
+      - 'FWMF for Fantasy Paper Maps.esp'
+      - 'FWMF for Paper Map by Mirhayasu.esp'
+      - 'FWMF Geology Survey Map.esp'
+      - 'FWMF Marked Clean Map.esp'
+      - 'FWMF Marked Old Map.esp'
+      - 'FWMF SE Marked Clean Map 4K.esp'
+      - 'FWMF SE Marked Old Map 4K.esp'
+      - 'FWMF SE Unmarked Clean Map 4K.esp'
+      - 'FWMF SE Unmarked Old Map 4K.esp'
+      - 'FWMF Skyrim and Solstheim Satellite Maps.esp'
+      - 'FWMF Unmarked Clean Map.esp'
+      - 'FWMF Unmarked Old Map.esp'
+      - 'Paper World Map.esp'
     msg:
       - <<: *useOnlyOneX
         subs: [ 'A Quality World Map ESP' ]
@@ -18117,23 +18134,6 @@ plugins:
         util: 'SSEEdit v4.0.3'
   - name: 'IcePenguinWorldMapPaper.esp'
     group: *paperMapsGroup
-    inc: [ 'Paper World Map.esp' ]
-    msg:
-      - <<: *patch3rdParty
-        subs:
-          - 'Atlas Map Markers'
-          - '[A Quality World Map Paper Patches](https://www.nexusmods.com/skyrimspecialedition/mods/30095/)'
-        condition: '(active("atlas map markers.esp") or active("Atlas Legendary( OCS)?\.esp")) and not active("AQWMP_AMM_Patch.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Enhanced Lighting for ENB (ELE)'
-          - '[A Quality World Map Paper Patches](https://www.nexusmods.com/skyrimspecialedition/mods/30095/)'
-        condition: 'active("ELE_SSE.esp") and not active("AQWMP_ELE_(RWT_)?Patch\.esp")'
-      - <<: *patch3rdParty
-        subs:
-          - 'Realistic Water Two'
-          - '[A Quality World Map Paper Patches](https://www.nexusmods.com/skyrimspecialedition/mods/30095/)'
-        condition: 'active("RealisticWaterTwo.esp") and not active("AQWMP_(ELE_|Lux_)?RWT_Patch\.esp")'
     clean:
       - crc: 0x09706810
         util: 'SSEEdit v4.0.3'
