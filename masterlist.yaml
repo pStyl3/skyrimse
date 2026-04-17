@@ -10882,8 +10882,6 @@ plugins:
         util: 'SSEEdit v4.0.4c'
   - name: 'WTT - Skyrim-Solstheim - Worldsettings.esp'
     group: *worldSettingsGroup
-    # Group rules to avoid cyclic interactions
-    after: [ 'A Clear Map of Skyrim.esp' ]
     # Do not clean - ITMs intentional according to author, presumably only border cells rarely touched by other mods
 
   - name: 'YASH2.esp'
@@ -17860,8 +17858,58 @@ plugins:
 
 ###### Gameplay - User Interface - Maps ######
   - name: 'A Clear Map of Skyrim.esp'
-    url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/56367/' ]
-    group: *worldSettingsGroup
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/56367/'
+        name: 'A Clear Map of Skyrim and Other Worlds'
+    group: *paperMapsGroup
+    inc:
+      - 'EzEWorldMapSE.esp'
+      - 'FWMF for Fantasy Paper Maps.esp'
+      - 'FWMF for Paper Map by Mirhayasu.esp'
+      - 'FWMF Geology Survey Map.esp'
+      - 'FWMF Marked Clean Map.esp'
+      - 'FWMF Marked Old Map.esp'
+      - 'FWMF SE Marked Clean Map 4K.esp'
+      - 'FWMF SE Marked Old Map 4K.esp'
+      - 'FWMF SE Unmarked Clean Map 4K.esp'
+      - 'FWMF SE Unmarked Old Map 4K.esp'
+      - 'FWMF Skyrim and Solstheim Satellite Maps.esp'
+      - 'FWMF Unmarked Clean Map.esp'
+      - 'FWMF Unmarked Old Map.esp'
+      - 'IcePenguinWorldMapclassic.esp'
+      - 'IcePenguinWorldMapPaper.esp'
+      - 'Paper World Map.esp'
+    clean:
+      - crc: 0x473003D7
+        util: 'SSEEdit v4.1.5p 32bit fix version'
+  - name: 'ACMOS - (Beyond Reach|Bruma|Falskaar|Midwood Isle|Vominheim|Wyrmstooth|WTT Patch)\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/56367/'
+        name: 'A Clear Map of Skyrim and Other Worlds'
+  - name: 'ACMOS - Beyond Reach.esp'
+    clean:
+      - crc: 0xB3CB2350
+        util: 'SSEEdit v4.1.5p 32bit fix version'
+  - name: 'ACMOS - Bruma.esp'
+    clean:
+      - crc: 0x46FD64E6
+        util: 'SSEEdit v4.1.5p 32bit fix version'
+  - name: 'ACMOS - Falskaar.esp'
+    clean:
+      - crc: 0xDF55A674
+        util: 'SSEEdit v4.1.5p 32bit fix version'
+  - name: 'ACMOS - Midwood Isle.esp'
+    clean:
+      - crc: 0xF91F2DE8
+        util: 'SSEEdit v4.1.5p 32bit fix version'
+  - name: 'ACMOS - Vominheim.esp'
+    clean:
+      - crc: 0xD33C7D75
+        util: 'SSEEdit v4.1.5p 32bit fix version'
+  - name: 'ACMOS - Wyrmstooth.esp'
+    clean:
+      - crc: 0xC9FF4FB9
+        util: 'SSEEdit v4.1.5p 32bit fix version'
 
   - name: 'City Paper Maps for FWMF.esp'
     url:
