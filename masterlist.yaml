@@ -860,9 +860,13 @@ groups:
     description: 'A group for mods that move city worldspaces to the tamriel worldspace.'
     after: [ *luxInteriorsGroup ]
 
+  - name: &eliBreezehomeOvehaulGroup Elianora''s Breezehome Overhaul
+    description: 'A group for the Elianora''s Breezehome Overhaul mod.'
+    after: [ *cityWorldMoversGroup ]
+
   - name: &winterholdRestoredGroup Winterhold Restored
     description: 'A group for the Winterhold Restored mod.'
-    after: [ *cityWorldMoversGroup ]
+    after: [ *eliBreezehomeOvehaulGroup ]
 
   - name: &waterOverhaulsGroup Water Overhauls
     description: 'A group for mods that have extensive changes to water.'
@@ -26322,24 +26326,83 @@ plugins:
         util: '[SSEEdit v4.0.2j](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         nav: 3
 
-  - name: 'Eli_Breezehome( \[(ADDON|DEV|PATCH) - .+\])?\.esp'
+  - name: 'Eli_Breezehome.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2829/'
-        name: 'Eli''s Breezehome Overhaul'
-  - name: 'Eli_Breezehome.esp'
-    group: *lowPriorityGroup
-    after:
-      - 'ELFX - NoBreezehome.esp'
-      - 'ELFX - NoPlayerHomes.esp'
-      - name: 'ELFX Shadows.esp'
-        condition: 'not active("Eli_Breezehome [ADDON - ELFX-FX].esp")'
+        name: 'Elianora''s Breezehome Overhaul (EBO)'
+    group: *eliBreezehomeOvehaulGroup
     dirty:
       - <<: *quickClean
-        crc: 0x9C90ACD4
-        util: '[SSEEdit v4.1.5g](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
+        crc: 0x1C2452D3
+        util: '[SSEEdit v4.1.5p 32bit fix version](https://www.nexusmods.com/skyrimspecialedition/mods/164)'
         itm: 1
-  - name: 'Eli_Breezehome [ADDON - ELFX-FX].esp'
-    after: [ 'ELFX Shadows.esp' ]
+  - name: 'Eli_Breezehome \[ADDON - (
+            {0}|Aquarium Addon \(FishingCC\)
+            {0}|Auto Systems
+            {0}|Basement Mannequin 2Plus
+            {0}|CC Armoury Expansion
+            {0}|ELFX-FX
+            {0}|Molag''s Will
+            {0}|Sorcerer Staff Scroll Overhaul
+            {0}|Tower Top Soil Sprinkler
+            {0}|Use Those Blankets
+            {0}|)\]\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2829/'
+        name: 'Elianora''s Breezehome Overhaul (EBO)'
+  - name: 'Eli_Breezehome \[PATCH - (
+            {0}|ASLAL
+            {0}|Breezehome BETA Cell Settings
+            {0}|CWE
+            {0}|CWE \+ SREX AIO
+            {0}|ELE
+            {0}|Eli_Halla
+            {0}|HTCO-C
+            {0}|HTCO-Wr
+            {0}|Lux
+            {0}|OCW
+            {0}|RS
+            {0}|RS \+ ELE
+            {0}|SFLPregnancyChildRearing
+            {0}|Spaghetti''s Cities AIO
+            {0}|Spaghetti''s Cities AIO \+ NavCuts
+            {0}|Spaghetti''s Cities AIO \+ SREX AIO
+            {0}|Spaghetti''s Cities WR
+            {0}|Spaghetti''s Cities WR \+ NavCuts
+            {0}|Spaghetti''s Cities WR \+ OCS
+            {0}|Spaghetti''s Cities WR \+ SREX AIO
+            {0}|SREX AIO
+            {0}|SREX WR
+            {0}|TWOTN
+            {0}|TWOTN-L
+            {0}|USSEP
+            {0}|USSEP \+ OCS
+            {0}|USSEP \+ SREX AIO
+            {0}|USSEP \+ SREX WR
+            {0}|VRIK Wash Basin Fix
+            {0}|WS Ultimate
+            {0}|)\]\.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/2829/'
+        name: 'Elianora''s Breezehome Overhaul (EBO)'
+    after:
+      - 'Eli_Breezehome [ADDON - Aquarium Addon (FishingCC)].esp'
+      - 'Eli_Breezehome [ADDON - Auto Systems].esp'
+      - 'Eli_Breezehome [ADDON - Basement Mannequin 2Plus].esp'
+      - 'Eli_Breezehome [ADDON - CC Armoury Expansion].esp'
+      - 'Eli_Breezehome [ADDON - ELFX-FX].esp'
+      - 'Eli_Breezehome [ADDON - FenixDisenchanter].esp'
+      - 'Eli_Breezehome [ADDON - Molag''s Will].esp'
+      - 'Eli_Breezehome [ADDON - Sorcerer Staff Scroll Overhaul].esp'
+      - 'Eli_Breezehome [ADDON - Tower Top Soil Sprinkler].esp'
+      - 'Eli_Breezehome [ADDON - Use Those Blankets].esp'
+  - name: 'Eli_Breezehome \[PATCH - (Breezehome BETA Cell Settings|ELE|Lux|RS|RS \+ ELE|WS Ultimate)\]\.esp'
+    group: *eliBreezehomeOvehaulGroup
+  - name: 'Eli_Breezehome \[PATCH - (ELE|RS)\]\.esp'
+    msg:
+      - <<: *alreadyInX
+        subs: [ 'Eli_Breezehome [PATCH - RS + ELE].esp' ]
+        condition: 'file("Eli_Breezehome \[PATCH - (ELE|RS)\]\.esp")'
 
   - name: 'Eli_Halla.esp'
     url:
