@@ -4743,6 +4743,20 @@ plugins:
       - crc: 0xBE8349F6
         util: 'SSEEdit v4.1.5p 32bit fix version'
 
+  - name: 'ATLM.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/153425/'
+        name: 'Ambient Templates for Lighting Mods'
+    group: *frameworksGroup
+    req:
+      - name: 'SKSE/Plugins/LumaUtil.dll'
+        display: '[Luma Utility](https://www.nexusmods.com/skyrimspecialedition/mods/177961/)'
+    inc:
+      - 'Ambiance.esp'
+      - 'ELFXEnhancer.esp'
+      - 'ELFX - Hardcore.esp'
+      - 'Lux.esp'
+
   - name: 'Autumn Skies.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/14379/' ]
     dirty:
@@ -5907,9 +5921,10 @@ plugins:
   - name: 'TL Bulbs ISL.esp'
     group: *cellLightingGroup
     req:
-      - *CommunityShaders
-      - name: 'SKSE/Plugins/LightingUtil.dll'
+      - name: 'ATLM.esp'
         display: '[Ambient Templates for Lighting Mods](https://www.nexusmods.com/skyrimspecialedition/mods/153425/)'
+        condition: 'not file("Luma/Cell/ATLM.esp")'
+      - *CommunityShaders
       - name: 'Shaders/InverseSquareLighting/InverseSquareLighting.hlsli'
         display: '[Inverse Square Lighting](https://www.nexusmods.com/skyrimspecialedition/mods/153542/)'
       - name: 'SKSE/Plugins/po3_LightPlacer.dll'
@@ -6231,9 +6246,10 @@ plugins:
   - name: 'Window Shadows Ultimate.esp'
     group: *cellLightingGroup
     req:
-      - *BaseObjSwap
-      - name: 'SKSE/Plugins/LightingUtil.dll'
+      - name: 'ATLM.esp'
         display: '[Ambient Templates for Lighting Mods](https://www.nexusmods.com/skyrimspecialedition/mods/153425/)'
+        condition: 'not file("Luma/Cell/ATLM.esp")'
+      - *BaseObjSwap
       - name: 'SKSE/Plugins/XEMIUtil.dll'
         display: '[XEMI Utility](https://www.nexusmods.com/skyrimspecialedition/mods/159084/)'
     inc:
