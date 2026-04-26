@@ -4751,6 +4751,7 @@ plugins:
     req:
       - name: 'SKSE/Plugins/LumaUtil.dll'
         display: '[Luma Utility](https://www.nexusmods.com/skyrimspecialedition/mods/177961/)'
+        condition: 'not file("SKSE/Plugins/SkyPatcher/cell/ZZZzzzAmbient Lighting Templates for Interiors/ZZZzzzAT Vanilla Cells.ini")'
     inc:
       - 'Ambiance.esp'
       - 'ELFXEnhancer.esp'
