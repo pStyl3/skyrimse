@@ -18434,6 +18434,7 @@ plugins:
       - 'AmuletsShowOnRobes-JOP.esp'
       - 'AnotherSortingMod_2017-SSE.esp'
       - 'WACCF_ASM-2019.esp'
+      - 'weapons armor clothing & clutter fixes.esp'
     msg:
       - <<: *compatPatch
         subs: [ '[kryptopyr''s Patch Hub](https://www.nexusmods.com/skyrimspecialedition/mods/19518/)' ]
@@ -18445,25 +18446,27 @@ plugins:
       - <<: *patch3rdParty
         subs:
           - 'Requiem - The Roleplaying Overhaul'
+          - '[Requiem - WACCF ACE Patches](https://www.nexusmods.com/skyrimspecialedition/mods/31758/)'
+        condition: 'active("Requiem.esp") and not active("Requiem - Armor and Clothing Extension( SPID)?\.esp") and version("Requiem.esp", >=, "6.0.0")'
+      - <<: *patch3rdParty
+        subs:
+          - 'Requiem - The Roleplaying Overhaul'
           - '[Requiem - WACCF CCOR ACE Patches](https://www.nexusmods.com/skyrimspecialedition/mods/31758/)'
         condition: 'active("Requiem.esp") and not active("Requiem - WACCF - ACE.esp") and version("Requiem.esp", <, "6.0.0")'
-      - <<: *patchUnavailableRequiem
-        condition: 'active("Requiem.esp") and version("Requiem.esp", >=, "6.0.0")'
       - *requiresMCM
       - *requiresMCMVR
     tag:
       - -Invent.Remove
       - -Names
       - NPC.DefaultOutfit
-      - -Stats
     clean:
-      - crc: 0xAFE71282
-        util: 'SSEEdit v4.0.4b'
+      - crc: 0x48D3AB60
+        util: 'SSEEdit v4.1.5p 32bit fix version'
   - name: 'waccf_armor and clothing extension_spid.esp'
     req: [ *SPID ]
     clean:
-      - crc: 0xC9EF92AB
-        util: 'SSEEdit v4.0.4b'
+      - crc: 0xA125CE4E
+        util: 'SSEEdit v4.1.5p 32bit fix version'
 
   - name: 'AVExpansion.esp'
     url:
