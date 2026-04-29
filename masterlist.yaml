@@ -786,6 +786,10 @@ groups:
     description: 'A group for modules that modify character Races & Classes.'
     after: [ *pceGroup ]
 
+  - name: &standingStoneEffectsGroup Standing Stone Effects
+    description: 'A group for modules that modify effects of Standing stones.'
+    after: [ *racesGroup ]
+
   - name: &economyGroup Economy
     description: 'A group for mods that alter the Economy of the game.'
     after: [ *racesGroup ]
@@ -807,7 +811,9 @@ groups:
     after: [ *perksGroup ]
 
   - name: &coreGroup Core Mods
-    after: [ *vampireGameplayGroup ]
+    after:
+      - *standingStoneEffectsGroup
+      - *vampireGameplayGroup
 
   - name: &altStartGroup Alternate Start
     description: 'A group for mods that provide alternative starting choices.'
@@ -13144,6 +13150,7 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/14910/'
         name: 'Andromeda - Unique Standing Stones of Skyrim'
+    group: *standingStoneEffectsGroup
     inc:
       - 'Aurora - Standing Stones of Skyrim.esp'
       - 'Better_Standing_Stones.esp'
@@ -13151,13 +13158,15 @@ plugins:
       - 'CCO - Permanent Birthsigns.esp'
       - 'DoomstoneRebalanced.esp'
       - 'ERSO 20 - Standing Stones Overhaul.esp'
+      - 'Evenstar - Minimalistic Standing Stones of Skyrim.esp'
+      - 'Freyr - Integrated Standing Stones of Skyrim.esp'
       - 'Informative Standing Stones.esp'
+      - 'Mundus.esp'
       - 'PS_StandingStones.esp'
       - 'StandingStonesAlternative.esp'
       - 'standingstoneoverhaul.esp'
       - 'Standing Stones Overhaul.esp'
       - 'Superior Standing Stones.esp'
-    after: [ 'disparity.esp' ]
     tag:
       - -Names
       - EffectStats
@@ -13503,12 +13512,23 @@ plugins:
 
   - name: 'Evenstar - Minimalistic Standing Stones of Skyrim.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/41256/' ]
-    after:
-      - 'Convenient Horses.esp'
-      - 'disparity.esp'
+    group: *standingStoneEffectsGroup
     inc:
       - 'Aurora - Standing Stones of Skyrim.esp'
       - 'Andromeda - Unique Standing Stones of Skyrim.esp'
+      - 'Better_Standing_Stones.esp'
+      - 'BetterStandingStonesMW.esp'
+      - 'CCO - Permanent Birthsigns.esp'
+      - 'DoomstoneRebalanced.esp'
+      - 'ERSO 20 - Standing Stones Overhaul.esp'
+      - 'Freyr - Integrated Standing Stones of Skyrim.esp'
+      - 'Informative Standing Stones.esp'
+      - 'Mundus.esp'
+      - 'PS_StandingStones.esp'
+      - 'StandingStonesAlternative.esp'
+      - 'standingstoneoverhaul.esp'
+      - 'Standing Stones Overhaul.esp'
+      - 'Superior Standing Stones.esp'
     tag:
       - EffectStats
       - Graphics
@@ -13569,6 +13589,23 @@ plugins:
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/88043/'
         name: 'Freyr - Integrated Standing Stones of Skyrim'
+    group: *standingStoneEffectsGroup
+    inc:
+      - 'Aurora - Standing Stones of Skyrim.esp'
+      - 'Andromeda - Unique Standing Stones of Skyrim.esp'
+      - 'Better_Standing_Stones.esp'
+      - 'BetterStandingStonesMW.esp'
+      - 'CCO - Permanent Birthsigns.esp'
+      - 'DoomstoneRebalanced.esp'
+      - 'ERSO 20 - Standing Stones Overhaul.esp'
+      - 'Evenstar - Minimalistic Standing Stones of Skyrim.esp'
+      - 'Informative Standing Stones.esp'
+      - 'Mundus.esp'
+      - 'PS_StandingStones.esp'
+      - 'StandingStonesAlternative.esp'
+      - 'standingstoneoverhaul.esp'
+      - 'Standing Stones Overhaul.esp'
+      - 'Superior Standing Stones.esp'
     tag:
       - EffectStats
       - Graphics
@@ -13795,9 +13832,23 @@ plugins:
 
   - name: 'Mundus.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/33411/' ]
-    after:
-      - 'Convenient Horses.esp'
-      - 'disparity.esp'
+    group: *standingStoneEffectsGroup
+    inc:
+      - 'Aurora - Standing Stones of Skyrim.esp'
+      - 'Andromeda - Unique Standing Stones of Skyrim.esp'
+      - 'Better_Standing_Stones.esp'
+      - 'BetterStandingStonesMW.esp'
+      - 'CCO - Permanent Birthsigns.esp'
+      - 'DoomstoneRebalanced.esp'
+      - 'ERSO 20 - Standing Stones Overhaul.esp'
+      - 'Evenstar - Minimalistic Standing Stones of Skyrim.esp'
+      - 'Freyr - Integrated Standing Stones of Skyrim.esp'
+      - 'Informative Standing Stones.esp'
+      - 'PS_StandingStones.esp'
+      - 'StandingStonesAlternative.esp'
+      - 'standingstoneoverhaul.esp'
+      - 'Standing Stones Overhaul.esp'
+      - 'Superior Standing Stones.esp'
     tag:
       - EffectStats
       - Graphics
