@@ -6402,6 +6402,10 @@ plugins:
         subs: [ 'Racial Body Morphs ESP' ]
         condition: 'many("Racial Body Morphs( - (Extreme|Subtle))?\.esp")'
   - name: 'Racial Body Morphs.esp'
+    msg:
+      - <<: *obsolete
+        subs: [ '[Racial Body Morphs Redux](https://www.nexusmods.com/skyrimspecialedition/mods/65047/)' ]
+        condition: 'checksum("Racial Body Morphs.esp", 2E9ACB26)'
     clean:
       - crc: 0x170CCDDA
         util: 'SSEEdit v4.1.5p 32bit fix version'
@@ -6410,14 +6414,13 @@ plugins:
       - crc: 0x9DC84475
         util: 'SSEEdit v4.1.5p 32bit fix version'
   - name: 'Racial Body Morphs - Subtle.esp'
-    clean:
-      - crc: 0xB5DE9B79
-        util: 'SSEEdit v4.1.5p 32bit fix version'
-  - name: 'Racial Body Morphs( - Subtle)?\.esp'
     msg:
       - <<: *obsolete
         subs: [ '[Racial Body Morphs Redux](https://www.nexusmods.com/skyrimspecialedition/mods/65047/)' ]
-        condition: 'checksum("Racial Body Morphs.esp", 2E9ACB26) or checksum("Racial Body Morphs - Subtle.esp", C6FC38DC)'
+        condition: 'checksum("Racial Body Morphs - Subtle.esp", C6FC38DC)'
+    clean:
+      - crc: 0xB5DE9B79
+        util: 'SSEEdit v4.1.5p 32bit fix version'
   - name: 'Racial Body Morphs - (Extreme Morphs|Extreme Morphs - Imperious|Imperious|Subtle - Imperious)\.esp'
     msg:
       - <<: *obsolete
