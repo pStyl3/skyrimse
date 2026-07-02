@@ -372,6 +372,12 @@ common:
     subs: [ 'Scrambled Bugs' ]
     condition: 'file("SKSE/Plugins/ScrambledBugs.dll")'
 
+  # &deletePlugin
+  - &deletePluginPanAIO
+    <<: *deletePlugin
+    subs: [ '**PAN_AIO_big.esp**' ]
+    condition: 'file("PAN_AIO_big.esp")'
+
   # &includesX
   - &includesMBBF
     <<: *includesX
@@ -6995,6 +7001,7 @@ plugins:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/19012/'
         name: 'Pandorable''s NPCs'
     msg:
+      - *deletePluginPanAIO
       - <<: *patch3rdParty
         subs:
           - 'Immersive Jewelry'
@@ -7019,6 +7026,7 @@ plugins:
         name: 'Pandorable''s NPCs - Dragonborn'
   - name: 'PAN_NPCs_DB.esp'
     msg:
+      - *deletePluginPanAIO
       - <<: *patch3rdParty
         subs:
           - 'Diverse Werewolves Collection'
@@ -7051,6 +7059,7 @@ plugins:
         name: 'Pandorable''s NPCs - Dawnguard'
   - name: 'PAN_NPCs_DG.esp'
     msg:
+      - *deletePluginPanAIO
       - <<: *patch3rdParty
         subs:
           - 'Dawnguard Arsenal'
@@ -7082,6 +7091,24 @@ plugins:
         util: 'SSEEdit v4.0.3'
   - name: 'PAN_NPCs_DG_MLU_Patch.esp'
     req: [ 'MLU.esp' ]
+
+  - name: 'PAN_NPCs_Males.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/42043/'
+        name: 'Pandorable''s NPCs - males'
+    msg: [ *deletePluginPanAIO ]
+
+  - name: 'PAN_NPCs_Males2.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/50617/'
+        name: 'Pandorable''s NPCs - males 2'
+    msg: [ *deletePluginPanAIO ]
+
+  - name: 'PAN_NPCs_Males3.esp'
+    url:
+      - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/110533/'
+        name: 'Pandorable''s NPCs - males 3'
+    msg: [ *deletePluginPanAIO ]
 
   - name: 'Serana - Hellraiser.esp'
     url: [ 'https://www.nexusmods.com/skyrimspecialedition/mods/10088/' ]
