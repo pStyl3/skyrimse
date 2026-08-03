@@ -5925,14 +5925,11 @@ plugins:
       - Deactivate
       - Graphics
 
-  - name: '(.*True Light|TL) .+\.esp'
+  - name: 'True Light.esp'
     url:
       - link: 'https://www.nexusmods.com/skyrimspecialedition/mods/135488/'
         name: 'True Light'
-  - name: 'True Light - Shadows and Ambient.esp'
     group: *earlyLoadersGroup
-  - name: 'TL Bulbs ISL.esp'
-    group: *cellLightingGroup
     req:
       - name: 'ATLM.esp'
         display: '[Ambient Templates for Lighting Mods](https://www.nexusmods.com/skyrimspecialedition/mods/153425/)'
@@ -5942,8 +5939,6 @@ plugins:
         display: '[Inverse Square Lighting](https://www.nexusmods.com/skyrimspecialedition/mods/153542/)'
       - name: 'SKSE/Plugins/po3_LightPlacer.dll'
         display: '[Light Placer](https://www.nexusmods.com/skyrimspecialedition/mods/127557/)'
-      - name: 'SKSE/Plugins/SkyPatcher.dll'
-        display: '[SkyPatcher](https://www.nexusmods.com/skyrimspecialedition/mods/106659/)'
     inc:
       - *ENBSeries
       - 'ELFX Shadows.esp'
@@ -5958,7 +5953,7 @@ plugins:
   # True Light Patches
   - name: 'True Light - USSEP Patch.esp'
     req:
-      - 'True Light - Shadows and Ambient.esp'
+      - 'True Light.esp'
       - 'unofficial skyrim special edition patch.esp'
 
   - name: 'TrueStormsSE.esp'
